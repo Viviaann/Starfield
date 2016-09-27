@@ -1,6 +1,9 @@
 //your code here
+PImage witch;
 void setup()
 {
+	size(400,400);
+	witch= loadImage("witch.png");
 	//your code here
 }
 void draw()
@@ -9,7 +12,8 @@ void draw()
 }
 class NormalParticle
 {
-	//your code here
+	//double myX, myY, speed, angle 
+	 
 }
 interface Particle
 {
@@ -17,7 +21,7 @@ interface Particle
 }
 class OddballParticle //uses an interface
 {
-	//your code here
+	image( witch, mouseX,mouseY,width,height);
 }
 class JumboParticle //uses inheritance
 {
