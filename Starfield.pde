@@ -3,17 +3,22 @@ PImage witch;
 NormalParticle[] one;
 void setup()
 {
-	size(400,400);
+	background(0);
+	size(700,700);
+one= new NormalParticle[100];
+for(int i=1; i< one.length; i++)
+	{
+		one[i]=new NormalParticle();
 
+		
+	}
 	
 	//your code here
 }
 void draw()
 {
-one= new NormalParticle[100];
 	for(int i=1; i< one.length; i++)
 	{
-		one[i]=new NormalParticle();
 		one[i].show();
 		one[i].move();
 		
@@ -28,7 +33,7 @@ class NormalParticle
 	{
 		myX= 200;
 		myY=200;
-		speed=(int)(Math.random()*10);
+		speed=(int)(Math.random()*5);
 		angle=Math.PI*2*Math.random();
 		myColor=(int)(Math.random()*255);
 		myColor2=(int)(Math.random()*255);
@@ -36,12 +41,14 @@ class NormalParticle
 	}
 	void show()
 	{
-		fill(myColor,myColor2,myColor3);
+		noStroke();
+		fill(myColor2,myColor2,myColor3);
 		ellipse(myX,myY,20,20);
 	}
 	void move()
 	{
-		speed=speed+1;
+		myX=myX+(float)(Math.cos(Math.PI/2)*speed)+(int)(Math.random()*25-(int)(Math.random()*25));
+		myY=myY+(float)(Math.sin(2*Math.PI/4)*speed)+(int)(Math.random()*25-(int)(Math.random()*25));
 	}
 
 	 
