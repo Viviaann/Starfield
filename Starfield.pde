@@ -3,7 +3,7 @@ PImage witch;
 NormalParticle[] one;
 void setup()
 {
-	background(0);
+	
 	size(700,700);
 one= new NormalParticle[100];
 for(int i=1; i< one.length; i++)
@@ -17,14 +17,18 @@ for(int i=1; i< one.length; i++)
 }
 void draw()
 {
+	background(0);
 	for(int i=1; i< one.length; i++)
 	{
 		one[i].show();
 		one[i].move();
 		
 	}
-	//your code here
+
+
+	
 }
+	//your code here
 class NormalParticle
 {
 	double  speed, angle;
@@ -33,8 +37,8 @@ class NormalParticle
 	{
 		myX= 200;
 		myY=200;
-		speed=(int)(Math.random()*5);
-		angle=Math.PI*2*Math.random();
+		speed=3;
+		angle=2*Math.PI*2*Math.random();
 		myColor=(int)(Math.random()*255);
 		myColor2=(int)(Math.random()*255);
 		myColor3=(int)(Math.random()*255);
@@ -42,14 +46,21 @@ class NormalParticle
 	void show()
 	{
 		noStroke();
-		fill(myColor2,myColor2,myColor3);
+		fill(myColor,myColor2,myColor3);
 		ellipse(myX,myY,20,20);
 	}
 	void move()
 	{
-		myX=myX+(float)(Math.cos(Math.PI/2)*speed)+(int)(Math.random()*25-(int)(Math.random()*25));
-		myY=myY+(float)(Math.sin(2*Math.PI/4)*speed)+(int)(Math.random()*25-(int)(Math.random()*25));
+		myX=myX+(float)(Math.cos(angle*angle)*speed);
+		myY=myY+(float)(Math.sin(angle*angle)*speed);
+		if(myY >= 9*myY+(float)(Math.sin(angle*angle)*speed))
+			{myX=200;
+			myY=200;
+			}
+		
+
 	}
+
 
 	 
 }
