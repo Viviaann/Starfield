@@ -17,6 +17,8 @@ for(int i=1; i< one.length; i++)
 }
 void draw()
 {
+	fill(0,0,0,3);
+	rect(0,0,600,600);
 	background(0);
 	for(int i=1; i< one.length; i++)
 	{
@@ -32,10 +34,13 @@ void draw()
 class NormalParticle
 {
 	double  speed, angle;
-	float myColor, myColor2, myColor3, myX,myY; 
+	float myColor, myColor2, myColor3, myX,myY,myXX,myYY, myOp; 
 	NormalParticle()
 	{
 		myX= 200;
+		myOp=0;
+		myXX=(int)(Math.random()*45);
+		myYY=(int)(Math.random()*45);
 		myY=200;
 		speed=3;
 		angle=2*Math.PI*2*Math.random();
@@ -45,18 +50,25 @@ class NormalParticle
 	}
 	void show()
 	{
-		noStroke();
-		fill(myColor,myColor2,myColor3);
-		ellipse(myX,myY,20,20);
+		stroke(myColor,myColor2,myColor3,myOp);
+		fill(myColor,myColor2,myColor3,myOp);
+		ellipse(myX-myXX,myY-myYY,20,20);
 	}
 	void move()
 	{
+		myOp=myOp+2;
+
 		myX=myX+(float)(Math.cos(angle*angle)*speed);
 		myY=myY+(float)(Math.sin(angle*angle)*speed);
-		if(myY >= 9*myY+(float)(Math.sin(angle*angle)*speed))
+		if(myY == 9*myY+(float)(Math.sin(angle*angle)*speed) )
 			{myX=200;
 			myY=200;
 			}
+		if(myX == 9*myY+(float)(Math.sin(angle*angle)*speed) )
+			{myX=200;
+			myY=200;
+			}
+
 		
 
 	}
