@@ -1,4 +1,5 @@
-//your code here
+//your code 
+int oP;
 PImage witch;
 Particle[] one;
 //NormalParticle[] two;
@@ -28,9 +29,9 @@ for(int i=0; i<100; i++)
 }
 void draw()
 {
-	fill(0,0,0,3);
-	rect(0,0,600,600);
-	background(0);
+	oP=oP+1;
+	fill(0,0,0,oP);
+	rect(0,0,700,700);
 	for(int i=0; i< one.length; i++)
 	{
 
@@ -270,13 +271,14 @@ class RatballParticle implements Particle//uses an interface
 		// 	myY=200;
 		// 	}
 
-		myX = 350+Math.cos(angle*speed)*5*speed;
-        myY = 350+Math.sin(angle*speed)*5*speed;
-        angle=angle+angle*0.3;
-        speed=speed+speed/0.4;
-        if(myX>700 || myY>700)
-        	myY=350;
-        	myX=350;
+		 myX = 350+Math.cos(angle*speed*0.4)*speed/5;
+        myY = 350+Math.sin(angle*speed*0.4)*speed/5;
+        angle=angle+0.3;
+        speed=speed/0.4;
+        if(myX>700 && myY>700)
+          myY=350;
+          myX=350;
+          angle=angle+0.3;
 
 
 
