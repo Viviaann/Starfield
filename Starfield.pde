@@ -107,7 +107,7 @@ class NormalParticle implements Particle
 
 		myX = (float)(myX + speed*Math.cos(angle));
         myY = (float)(myY + speed*Math.sin(angle));
-        System.out.println(myX +", " + myY);
+        
 	}
 
 
@@ -162,7 +162,7 @@ class OddballParticle implements Particle//uses an interface
 
 		myX = (float)(myX + speed*Math.cos(angle));
         myY = (float)(myY + speed*Math.sin(angle));
-        System.out.println(myX +", " + myY);
+        
 	}
 	//witch= loadImage("witch.png");
 	//image( witch, mouseX,mouseY,width,height);
@@ -215,7 +215,7 @@ class EvenballParticle implements Particle//uses an interface
 
 		myX = 350+ 200*(float)Math.cos((angle));
         myY =350+ 300*(float)Math.sin((angle));
-        System.out.println(myX +", " + myY);
+        
 	}
 	//witch= loadImage("witch.png");
 	//image( witch, mouseX,mouseY,width,height);
@@ -288,7 +288,7 @@ class RatballParticle implements Particle//uses an interface
 
 
 
-        System.out.println(myX +", " + myY);
+        
 	}
 	//witch= loadImage("witch.png");
 	//image( witch, mouseX,mouseY,width,height);
@@ -354,7 +354,7 @@ class Ratball2Particle implements Particle//uses an interface
 
 
 
-        System.out.println(myX +", " + myY);
+       
   }
   //witch= loadImage("witch.png");
   //image( witch, mouseX,mouseY,width,height);
